@@ -38,36 +38,10 @@ img {
   display:inline-block;
 }
 
-svg:hover {
-  fill:#787D5C;
-}
-
 a {
-  position: relative;
-  overflow: hidden;
-  text-decoration: none;
   color:#1F2213;
+  text-decoration:none;
 }
-
-a::after {
-    content:'';
-    background: rgba(#787D5C, 0.25);
-    position: absolute;
-    left: 12px;
-    bottom: -6px;
-    width: calc(100% - 8px);
-    height: calc(100% - 8px);
-    z-index: -1;
-    transition: 0.35s cubic-bezier(0.25, 0.1, 0, 2.05);
-  }
-
-a:hover::after {
-    left: 0;
-    bottom: -2px;
-    width: 100%;
-    height: 100%;
-  }
-
 
 .main-container {
   display:flex;
@@ -82,7 +56,6 @@ a:hover::after {
   flex-direction:column;
 }
 
-
 .bottom-container {
   align-content:space-between;
   vertical-align: middle;
@@ -92,18 +65,99 @@ a:hover::after {
   display:none;
 }
 
+.music {
+  display:flex;
+  flex-direction:column;
+}
+
+.r-link{
+	display: var(--rLinkDisplay, inline-flex) !important;
+}
+
+.r-link[href]{
+	color: var(--rLinkColor) !important;
+	text-decoration: var(--rLinkTextDecoration, none) !important;
+}
+
+.text-underlined{
+    /*
+        1. I use pixels units because others units (em, rem, vw, vh, etc) can
+        lead to the mistake of displaying a circumcised line
+    */
+
+    --uiTextUnderlinedLineHeight: var(--textUnderlinedLineHeight, 2px); /* 1 */
+    --uiTextUnderlinedLineGap: var(--textUnderlinedLineGap, .5rem);
+    --uiTextUnderlinedPaddingBottom: calc(var(--uiTextUnderlinedLineHeight) + var(--uiTextUnderlinedLineGap));
+
+    padding-bottom: var(--uiTextUnderlinedPaddingBottom) !important;
+    position: var(--textUnderlinedPosition, relative) !important;
+		z-index: var(--textUnderlinedZindex, 1) !important;
+}
+
+.text-underlined::after{
+    content: "";
+    width: var(--textUnderlinedLineWidht, 100%) !important;
+    height: var(--uiTextUnderlinedLineHeight) !important;
+		background-image: var(--textUnderlinedBackgroundImage, linear-gradient(to top, var(--textUnderlinedLineColor, currentColor) 30%, rgba(0, 0, 0, 0) 45%)) !important;
+
+    position: absolute;
+    left: var(--textUnderlinedLineLeft, 0) !important;
+    bottom: var(--textUnderlinedLineBottom, 0) !important;
+		z-index: var(--textUnderlinedLineZindex, -1) !important;
+}
+
+/*
+=====
+CORE
+=====
+*/
+
+.link{
+	--textUnderlinedLineHeight: 100%;
+	--textUnderlinedLineGap: 0;
+	--textUnderlinedLineColor:rgba(31, 34, 19, 0.35);
+
+	padding-left: .75rem;
+	padding-right: .75rem;
+}
+
+.link::after{
+	will-change: width;
+	transition: width .1s ease-out;
+	transform: rotate(-2deg);
+	transform-origin: left bottom;
+}
+
+.link:hover{
+	--textUnderlinedLineWidht: 0;
+}
+
+.link:hover::after{
+	transition-duration: .15s;
+}
+
 @media screen and (max-width:600px) {
+
   .main-container {
+    display:flex;
     flex-direction:column;
     line-height:2em;
-    margin-left:20px;
-
+    justify-content: flex-start;
+    align-items: flex-start;
   }
 
   h1 {
     line-height:1em;
+    width:90vw;
+    margin-left:20px;
   }
-
+  h3 {
+    margin-left:20px;
+  }
+  p {
+    margin-left:20px;
+    width:90vw;
+  }
   .mobile {
     display:block;
   }
@@ -122,4 +176,12 @@ a:hover::after {
     display:flex;
     flex-direction:row;
   }
+
+  .music {
+    width:90vw;
+    display:flex;
+    flex-direction:column;
+    margin-left:20px;
+  }
+
 }
