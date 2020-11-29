@@ -38,20 +38,36 @@ img {
   display:inline-block;
 }
 
-span {
-  padding-bottom: 3px;
-  border-bottom: 2px solid #787D5C;
-  line-height: 20px;
+svg:hover {
+  fill:#787D5C;
 }
 
 a {
-  text-decoration:none;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
   color:#1F2213;
 }
 
-a:hover {
-  color:#787D5C;
-}
+a::after {
+    content:'';
+    background: rgba(#787D5C, 0.25);
+    position: absolute;
+    left: 12px;
+    bottom: -6px;
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+    z-index: -1;
+    transition: 0.35s cubic-bezier(0.25, 0.1, 0, 2.05);
+  }
+
+a:hover::after {
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 100%;
+  }
+
 
 .main-container {
   display:flex;
@@ -76,7 +92,7 @@ a:hover {
   display:none;
 }
 
-@media screen and (max-width:800px) {
+@media screen and (max-width:600px) {
   .main-container {
     flex-direction:column;
     line-height:2em;
