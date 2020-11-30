@@ -153,7 +153,7 @@ svg:hover {
   fill:#1F2213;
 }
 
-@media screen and (max-width:500px) {
+@media screen and (max-width:800px) {
 
   .main-container {
     display:flex;
@@ -201,5 +201,13 @@ svg:hover {
     flex-direction:column;
     margin-left:20px;
   }
+
+  html, body {
+  overflow-x: hidden;
+  }
+
+  body {
+  position: relative
+}
 
 }
