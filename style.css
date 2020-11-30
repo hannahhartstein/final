@@ -168,7 +168,9 @@ svg:hover {
     line-height:1em;
     width:80vw;
     margin-left:20px;
+    font-size:55px;
   }
+
   h3 {
     margin-left:20px;
   }
@@ -201,6 +203,7 @@ svg:hover {
     display:flex;
     flex-direction:column;
     margin-left:20px;
+    margin-bottom:30px;
   }
 
   html, body {
