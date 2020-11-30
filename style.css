@@ -13,6 +13,10 @@ div {
   /* margin-left:-4px; */
 }
 
+a {
+  cursor:cell;
+}
+
 h1 {
   font-family: 'Rubik', sans-serif;
   color:#787D5C;
@@ -59,6 +63,8 @@ a {
 .bottom-container {
   align-content:space-between;
   vertical-align: middle;
+  margin-top:20px;
+  margin-left:20px;
 }
 
 .mobile {
@@ -68,6 +74,12 @@ a {
 .music {
   display:flex;
   flex-direction:column;
+}
+
+abbr[title] {
+  border-bottom:none !important;
+  text-decoration:none !important;
+  cursor:inherit !important;
 }
 
 .r-link{
@@ -130,10 +142,15 @@ CORE
 
 .link:hover{
 	--textUnderlinedLineWidht: 0;
+  cursor:cell;
 }
 
 .link:hover::after{
 	transition-duration: .15s;
+}
+
+svg:hover {
+  fill:#1F2213;
 }
 
 @media screen and (max-width:500px) {
@@ -175,6 +192,7 @@ CORE
   .icon-align {
     display:flex;
     flex-direction:row;
+    margin-left:20px;
   }
 
   .music {
