@@ -115,9 +115,9 @@ CORE
 .link{
 	--textUnderlinedLineHeight: 100%;
 	--textUnderlinedLineGap: 0;
-	--textUnderlinedLineColor:rgba(31, 34, 19, 0.35);
+	--textUnderlinedLineColor:rgba(237, 221, 109, .8);
 
-	padding-left: .75rem;
+	padding-left: .75rem;x
 	padding-right: .75rem;
 }
 
@@ -136,7 +136,7 @@ CORE
 	transition-duration: .15s;
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:500px) {
 
   .main-container {
     display:flex;
