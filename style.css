@@ -128,7 +128,7 @@ CORE
 .link{
 	--textUnderlinedLineHeight: 100%;
 	--textUnderlinedLineGap: 0;
-	--textUnderlinedLineColor:rgba(237, 221, 109, .8);
+	--textUnderlinedLineColor:rgba(109, 237, 222, 0.8);
 
 	padding-left: .75rem;x
 	padding-right: .75rem;
