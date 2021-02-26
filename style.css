@@ -37,6 +37,7 @@ h3 {
 p {
   font-family: 'Roboto', monospace;
   color:#1F2213;
+  line-height:1.75em;
 }
 
 img {
@@ -54,7 +55,8 @@ a {
   min-width:100vw;
   justify-content:center;
   align-items:center;
-
+  padding-left:200px;
+  padding-right:200px;
 }
 
 .left {
@@ -66,7 +68,7 @@ a {
   align-content:space-between;
   vertical-align: middle;
   margin-top:20px;
-  margin-left:20px;
+  margin-left:40px;
 }
 
 .mobile {
@@ -163,6 +165,7 @@ svg:hover {
     line-height:2em;
     justify-content: flex-start;
     align-items: flex-start;
+    padding:10px;
   }
 
   h1 {
